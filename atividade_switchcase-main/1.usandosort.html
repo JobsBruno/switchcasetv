@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade 1 usando sort</title>
+</head>
+<body>
+    <p id="situacao"></p>
+    <p id="notas"></p>
+    <p id="n1"></p>
+    <p id="n2"></p>
+    <p id="n3"></p>
+
+    <script>
+        let nome =prompt("Digite o nome do aluno")
+        let nota1 = Number(prompt("Digite a primeita nota do aluno"))
+        let nota2 = Number(prompt("Digite a segunda nota do aluno"))
+        let nota3 = Number(prompt("Digite a terceira nota do aluno"))
+        let media = 0;
+        let situacao = "";
+
+        media = (nota1+nota2+nota3)/3
+
+        switch (true) {
+            case media >=6.0:
+                situacao = "O aluno " + nome + " foi aprovado com media " + media + "."
+                break;
+                case media < 6.0:
+                situacao = "O aluno " + nome + " foi reprovado com media " + media + "."
+                break;
+            default:
+                break;
+        }
+        var notasOrdenadas = [nota1, nota2, nota3];
+        notasOrdenadas.sort(function(a, b){
+            return b - a;
+        });
+
+        alert("Notas em ordem descrescente: " + notasOrdenadas.join(","));
+
+        document.getElementById("situacao").innerHTML = situacao
+        document.getElementById("n1").innerHTML = "Nota 1: " + nota1;
+        document.getElementById("n2").innerHTML = "Nota 1: " + nota2;
+        document.getElementById("n3").innerHTML = "Nota 1: " + nota3;
+        document.getElementById("notas").innerHTML = "As notas do aluno em ordem descrescente foram " + notasOrdenadas.join(".");
+    </script>
+</body>
+</html>

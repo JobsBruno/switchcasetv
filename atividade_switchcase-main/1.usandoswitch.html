@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade 1 usando sort</title>
+</head>
+<body>
+    <p id="situacao"></p>
+    <p id="n1"></p>
+    <p id="n2"></p>
+    <p id="n3"></p>
+    <p id="notas"></p>
+
+    <script>
+        let nome =prompt("Digite o nome do aluno")
+        let nota1 = Number(prompt("Digite a primeita nota do aluno"))
+        let nota2 = Number(prompt("Digite a segunda nota do aluno"))
+        let nota3 = Number(prompt("Digite a terceira nota do aluno"))
+        let media = 0;
+        let situacao = "";
+        let notamaior = 0;
+        let notameio = 0;
+        let notabaixa = 0;
+
+        media = (nota1+nota2+nota3)/3
+
+        switch (true) {
+            case media >=6.0:
+                situacao = "O aluno " + nome + " foi aprovado com media " + media + "."
+                break;
+                case media < 6.0:
+                situacao = "O aluno " + nome + " foi reprovado com media " + media + "."
+                break;
+            default:
+                break;
+        }
+
+        switch (true) {
+            case nota1 >= nota2 && nota1 > nota3: 
+            notamaior = nota1;
+            if (nota2 > nota3) {
+                notameio = nota2;
+                notabaixa = nota3;
+            } else {
+                notameio = nota3;
+                notabaixa = nota2;
+            }
+            break;
+            case nota2 >= nota1 && nota2 > nota3: 
+            notamaior = nota2;
+            if (nota1 > nota3) {
+                notameio = nota1;
+                notabaixa = nota3;
+            } else {
+                notameio = nota3;
+                notabaixa = nota1;
+            }
+            break;
+            case nota3 >= nota1 && nota3 > nota2: 
+            notamaior = nota3;
+            if (nota2 > nota1) {
+                notameio = nota2;
+                notabaixa = nota1;
+            } else {
+                notameio = nota1;
+                notabaixa = nota2;
+            }
+            break;
+            case nota1 == nota2 && nota1 == nota3: 
+            notamaior = nota1;
+            notameio = nota2;
+            notabaixa = nota3;
+            break;
+
+            default: 
+            notamaior = 0;
+            notameio = 0;
+            notabaixa = 0;
+            break;
+        }
+
+
+        document.getElementById("situacao").innerHTML = situacao
+        document.getElementById("n1").innerHTML = "Nota 1: " + nota1;
+        document.getElementById("n2").innerHTML = "Nota 2: " + nota2;
+        document.getElementById("n3").innerHTML = "Nota 3: " + nota3;
+        document.getElementById("notas").innerHTML = "Notas em ordem decrescente: " + notamaior + " , " + notameio + " , " + notabaixa + "."
+    </script>
+</body>
+</html>

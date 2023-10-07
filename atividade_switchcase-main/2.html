@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade 2</title>
+</head>
+<body>
+    <h1> Peso em ordem decrescente</h1>
+    <p id="pessoa1"></p>
+    <p id="pessoa2"></p>
+    <p id="pessoa3"></p>
+    <p id="ordemD"></p>
+    
+    
+    <script>
+        let nome1 = prompt("Digite o nome da primeira pessoa");
+        let peso1 = Number(prompt("Digite o peso da primeira pessoa em Kg"));
+        let nome2 = prompt("Digite o nome da segunda pessoa");
+        let peso2 = Number(prompt("Digite o peso da segunda pessoa em Kg"));
+        let nome3 = prompt("Digite o nome da terceira pessoa");
+        let peso3 = Number(prompt("Digite o peso da terceira pessoa em Kg"));
+        let pessoa1 = nome1 + ": " + peso1 + "kg"
+        let pessoa2 = nome2 + ": " + peso2 + "Kg"
+        let pessoa3 = nome3 + ": " + peso3 + "kg"
+        let P 
+        let M 
+        let G
+
+        switch (true) {
+            case peso1 >= peso2 && peso1 > peso3:
+                G = pessoa1;
+                if (peso2 > peso3) {
+                    M = pessoa2;
+                    P = pessoa3;
+                } else {
+                    M = pessoa3;
+                    P = pessoa2;
+                }
+                break;
+                case peso2 >= peso1 && peso2 > peso3:
+                G = pessoa2;
+                if (peso1 > peso3) {
+                    M = pessoa1;
+                    P = pessoa3;
+                } else {
+                    M = pessoa3;
+                    P = pessoa1;
+                }
+                break;
+                case peso3 >= peso1 && peso3 > peso2:
+                G = pessoa3;
+                if (peso1 > peso2) {
+                    M = pessoa1;
+                    P = pessoa2;
+                } else {
+                    M = pessoa2;
+                    P = pessoa1;
+                }
+                break;
+                case peso1 == peso2 && peso1 == peso3:
+                G = pessoa3;
+                M = pessoa2;
+                P = pessoa1;
+                break;
+        
+            default:
+                G = 0;
+                M = 0;
+                P = 0;
+                break;
+        }
+        document.getElementById("pessoa1").innerHTML = pessoa1
+        document.getElementById("pessoa2").innerHTML = pessoa2
+        document.getElementById("pessoa3").innerHTML = pessoa3
+        document.getElementById("ordemD").innerHTML = G +"; " + M + "; " + P + "."
+
+
+        
+    </script>
+</body>
+</html>

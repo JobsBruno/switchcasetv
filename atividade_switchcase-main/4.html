@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade 4</title>
+</head>
+<body>
+    <div id="nome"></div>
+    <div id="venda"></div>
+    <script>
+        let nome = prompt("Digite o nome do funcionario")
+        let produto = Number(prompt("Digite a quantidade de produtos que o funcionario vendeu"))
+        let comissao = 1.00
+        let comissao_func = 0;
+
+        switch (true) {
+            case produto >500:
+                comissao = 2.00
+                break;
+            case produto >250:
+                comissao = 1.50
+                break;
+            default:
+                comissao = 1.00
+                break;
+        }
+        comissao_func = comissao * produto
+        document.getElementById("nome").innerHTML = "Nome do funcionario: " + nome
+        document.getElementById("venda").innerHTML = "total de comissão que o funcionario recebera: R$" + comissao_func
+
+
+    </script>
+</body>
+</html>

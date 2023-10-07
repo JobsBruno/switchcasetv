@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade 3</title>
+</head>
+<body>
+    <div id="opcao"></div>
+    <div id="preco"></div>
+
+    <script>
+        let pedido = prompt("Qual seu pedido?(1, 2 ou 3)")
+        let opcao = "";
+        let preco = "";
+
+        switch (pedido) {
+            case "1":
+                opcao = "Big Super Sanduba"
+                preco = "R$05,00" 
+                break;
+                case "2":
+                opcao = "Quase Super Sanduba"
+                preco = "R$03,00" 
+                break;
+                case "3":
+                opcao = "Mirradus Sanduba"
+                preco = "R$01,50" 
+                break;
+            default:
+                opcao = "Opção invalida, tente novamente"
+                preco = "Opção invalida, tente novamente" 
+                break;
+        }
+
+        document.getElementById("opcao").innerHTML = "opção: " + opcao
+        document.getElementById("preco").innerHTML = "preço: " + preco
+    </script>
+</body>
+</html>

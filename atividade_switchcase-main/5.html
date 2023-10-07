@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade 5</title>
+</head>
+<body>
+    <div id="data"></div>
+
+    <script>
+        let data = prompt("Digite uma data. Exemplo: 28/02/2007");
+        let partes = data.split("/")
+        let dia = parseInt(partes[0])
+        let mes = parseInt(partes[1])
+        let ano = parseInt(partes[2])
+        let mesNome = "";
+
+        switch (mes) {
+            case 1:
+                mesNome = "Janeiro";
+                break;
+                case 2:
+                mesNome = "Fevereiro";
+                break;
+                case 3:
+                mesNome = "Março";
+                break;
+                case 4:
+                mesNome = "Abril";
+                break;
+                case 5:
+                mesNome = "Maio";
+                break;
+                case 6:
+                mesNome = "Junho";
+                break;
+                case 7:
+                mesNome = "Julho";
+                break;
+                case 8:
+                mesNome = "Agosto";
+                break;
+                case 9:
+                mesNome = "Setembro";
+                break;
+                case 10:
+                mesNome = "Outubro";
+                break;
+                case 11:
+                mesNome = "Novembro";
+                break;
+                case 12:
+                mesNome = "Dezembro";
+                break;
+            default:
+                mesNome = "mes invalido"
+                break;
+        }
+        document.getElementById("data").innerHTML = dia + " de " + mesNome + " de " + ano + "."
+
+    </script>
+</body>
+</html>
